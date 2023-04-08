@@ -18,7 +18,6 @@ def choosed_categories(path, name):
         'School Life': 'Manga.csv',
         'Children & Family': 'Netflix.csv'
     }
-    # НЕ ЧІПАЙ МІЙ СЛОВНИК ВІН ТУТ СУКА ПОТРІБЕН
     for key, value in caregories_data.items():
         if name == key and path in value:
             dfr = pd.read_csv(path)
@@ -31,24 +30,10 @@ def choosed_categories(path, name):
             return dfr
         # print('No such categories')
 
-# def choosed_year(year, dataframe):
-#     '''
-#     returns data only with certain year
-#     '''
-#     year = [year]
-#     dataframe = dataframe.dropna(subset=['year'], inplace=False)
-#     dataframe_year = dataframe[dataframe['year'].isin(year)]
-#     while dataframe_year.empty:
-#         year.append(year[0]-1)
-#         year.append(year[0]+1)
-#         dataframe_year = dataframe[dataframe['year'].isin(year)]
-#     return dataframe_year
-
 def sortet_lenght(path, leng, df):
     '''
     returns data only with certain length
     '''
-    # df = choosed_year()
     if path == 'Anime.csv':
         if leng == 'short':
             df = df[(df['Episodes'] <= 20)]
@@ -99,22 +84,6 @@ def choosed_year(year, dataframe):
         data = pd.concat([dataframe_year, data])
     return data
 
-# def sorted_rating(df):
-#     '''
-#     this function returns first 3 elements of data sorted by rating
-#     '''
-#     df = df.sort_values('Rating')
-#     df = df[['title', 'description']].head(3)
-#     # # return df[['title', 'description']].head(3)
-#     # res = {'title1': df['title'][0],
-#     #         'title2': df['title'][1],
-#     #         'title3': df['title'][2],
-#     #         'description1': df['description'][0],
-#     #         'description2': df['description'][1],
-#     #         'description3': df['description'][2]
-#     #         }
-#     # return res
-#     return df
 
 def sorted_rating(df, one_more=  None):
     '''
@@ -137,17 +106,6 @@ def my_random(path = None):
     df = pd.read_csv(path)
     # df = df.sort_values('Rating')
     return df[['title', 'description']].sample(n=1)
-
-# def random_el ():
-#     list_path = ["Anime.csv", "Films.csv", "Books.csv", "Netflix.csv", "Manga.csv"]
-#     path = random.choice(list_path)
-#     df = pd.read_csv(path)
-#     # df = df.sort_values('Rating')
-#     return df[['title', 'description']].sample(n=2)
-# виклик до рандому
-# print(my_random(lst[0]))
-# загальний виклик, перепишіть у фласку
-# print(sorted_rating(choosed_year(lst[3], sortet_lenght(lst[0], lst[3], choosed_categories(lst[0], lst[1])))))
 
 app = Flask(__name__)
 
@@ -183,7 +141,7 @@ def netflix_html():
 
 @app.route("/exit")
 def exit_html():
-    text = [["Вибачте", "Нажаль ми не знайшли для Вас фільму"]]
+    text = [["Вибачте", "На жаль ми не знайшли для Вас фільму"]]
     return render_template("output copy.html", text = text)
 
 @app.route("/end", methods = ["POST"])
@@ -202,10 +160,10 @@ def end_st():
             entry = result.iloc[entry, :].values.flatten().tolist()
             films.append(entry)
         while len(films) < 3:
-            films.append(["Вибачте", "Нажаль Ми не знайшли для вас фільму"])
+            films.append(["Вибачте", "На жаль Ми не знайшли для вас фільму"])
         return render_template("ending.html", text = films)
     except:
-        text = [["Вибачте", "Нажаль ми не знайшли для Вас фільму"]]
+        text = [["Вибачте", "На жаль ми не знайшли для Вас фільму"]]
         return render_template("output copy.html", text = text)
 
 
@@ -222,69 +180,6 @@ def random_choice():
         films.append(entry)
     print(films)
     return render_template("output.html", text = films)
-
-# @app.route("/next", methods = ["POST"])
-# def next_page():
-#     value = request.json['value']
-#     # nast = request.json['value']
-#     # # print (value)
-#     # print (nast)
-#     # return render_template("main.html")  # update key to match client-side script
-#     return render_template("main.html")
-
-# @app.route('/button_value', methods=['GET'])
-# def button_value():
-
-#     return films
-    # text = [i.split() for i in result]
-    # print(text)
-    # # lst = [' '.join(i.remove(i[0])) for i in lst]
-    # for i in text:
-    #     i.remove(i[0])
-    # res = []
-    # el = ""
-    # print(f"text is {text}")
-    # for i in text:
-    #     print(f"i is {i}")
-    #     for elem in i:
-    #         el += " "
-    #         el += elem
-    #     res.append([el])
-    #     print(f"RES is {res}")
-    #     el = ""
-    # print (res)
-    # return res
-    # return render_template("вивід.html",text = result)
-    # list_res = [{'title1': result['title'][0],
-    #  'title2' : result['title'][1],
-    #  'title3' : result['title'][2],
-    #  'desc1' : result['description'][0],
-    #  'desc2' : result['description'][1],
-    #  'desc3' : result['description'][2]}]
-    # print(text)
-    # title2 = result['title'][1]
-    # print(title2)
-    # title3 = result['title'][2]
-    # desc1 = result['description'][0]
-    # desc2 = result['description'][1]
-    # desc3 = result['description'][2]
-    # print(value)  # replace with your own code
-    # return value
-# def return_valye(value):
-#     result = str(sorted_rating(sortet_lenght(value[0], value[3], choosed_year(int(value[2]), choosed_categories(value[0], value[1]))))).strip().split('\n')
-#     result = result[1:]
-#     text = [i.split() for i in result]
-#     # lst = [' '.join(i.remove(i[0])) for i in lst]
-#     for i in text:
-#         i.remove(i[0])
-#     res = []
-#     el = ""
-#     for i in text:
-#         for elem in i:
-#             el += " "
-#             el += elem
-#         res.append([el])
-#         el = ""
 
 if __name__ == '__main__':
     app.run(debug=True)
