@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ua"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ЯКИЙ ЖАНР, ВАМ ПОДОБАЄТЬСЯ?">
+    <meta name="description" content="">
+    <title>netflix</title>
+    <link rel="stylesheet" href="../static/styles/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="../static/styles/css/netflix.css" media="screen">
+    <script class="u-script" type="text/javascript" src="../static/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../static/js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.7.9, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Site1"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="netflix">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="ua">
+    <section class="u-black u-clearfix u-section-1" id="sec-9638">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <img class="u-image u-image-default u-image-1" src="../static/images/2023-03-2021.51.17.png" alt="" data-image-width="804" data-image-height="916">
+        <a href="\" class="u-border-none u-btn u-button-style u-hover-custom-color-1 u-none u-btn-1"><span class="u-file-icon u-icon u-text-white u-icon-1"><img src="../static/images/149118-b7e721d9.png" alt=""></span>&nbsp; 
+        </a>
+        <a class="u-border-none u-btn u-btn-round u-button-style u-custom-font u-font-georgia u-hover-custom-color-1 u-none u-radius-50 u-btn-2" id ="random">Рандом</a>
+        <h1 class="u-custom-font u-font-georgia u-text u-text-default-xl u-text-1">ЯКИЙ ЖАНР</h1>
+        <h2 class="u-align-center-xs u-custom-font u-font-georgia u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-2">ВАМ ПОДОБАЄТЬСЯ?</h2>
+        <a href="netflix.html#sec-a0af" class="u-btn u-btn-round u-button-style u-custom-font u-font-georgia u-hover-palette-1-light-1 u-radius-33 u-text-custom-color-1 u-white u-btn-3" onclick="setValueGenre('Comedy')">Комедія</a>
+        <a href="netflix.html#sec-a0af" class="u-btn u-btn-round u-button-style u-custom-font u-font-georgia u-hover-palette-1-light-1 u-radius-33 u-text-custom-color-1 u-white u-btn-4" onclick="setValueGenre('Children & Family')">Сімейне</a>
+        <a href="netflix.html#sec-a0af" class="u-btn u-btn-round u-button-style u-custom-font u-font-georgia u-hover-palette-1-light-1 u-radius-33 u-text-custom-color-1 u-white u-btn-5" onclick="setValueGenre('Drama')">Драма<br>
+        </a>
+      </div>
+    </section>
+    <section class="u-black u-clearfix u-section-2" id="sec-a0af">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-custom-font u-font-georgia u-text u-text-1">ОБЕРІТЬ РІК</h1>
+        <input type="range" id="year" name="year"
+         min="2011" max="2023" oninput="this.nextElementSibling.innerHTML = `Year: ${this.value}`">
+        <label for="year">Year</label>
+        <a href="netflix.html#sec-2d32" class="u-border-none u-btn u-button-style u-hover-custom-color-1 u-none u-btn-1"><span class="u-file-icon u-icon u-text-white u-icon-1"><img src="../static/images/149117-6109c3a1.png" alt=""></span>&nbsp;​.
+        </a>
+      </div>
+    </section>
+    <section class="u-black u-clearfix u-section-3" id="sec-2d32">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <img class="u-image u-image-default u-image-1" src="../static/images/2023-03-2113.19.10.png" alt="" data-image-width="1476" data-image-height="892">
+        <a class="u-border-none u-btn u-btn-round u-button-style u-custom-font u-font-georgia u-hover-grey-5 u-palette-5-light-3 u-radius-33 u-text-custom-color-1 u-btn-1" onclick="setValueLength('short')" id = 'min'>До двох годин</a>
+        <h1 class="u-custom-font u-font-georgia u-text u-text-default u-text-1">ЯК БАГАТО</h1>
+        <h2 class="u-custom-font u-font-georgia u-text u-text-default u-text-2">У ВАС ЧАСУ?</h2>
+        <a class="u-border-none u-btn u-btn-round u-button-style u-custom-font u-font-georgia u-hover-grey-5 u-palette-5-light-3 u-radius-33 u-text-custom-color-1 u-btn-2" onclick="setValueLength('mid')" id = 'mid'>До трьох годин</a>
+        <a class="u-border-none u-btn u-btn-round u-button-style u-custom-font u-font-georgia u-hover-grey-5 u-palette-5-light-3 u-radius-33 u-text-custom-color-1 u-btn-3" onclick="setValueLength('long')" id = 'max'>Багато</a>
+      </div>
+    </section>
+    <script>
+      function ExecPythonCommand(pythonCommand){
+        // alert(pythonCommand)
+        var request = new XMLHttpRequest()
+        request.open("GET", "/" + pythonCommand, true)
+        request.send()
+      }
+
+      var genre = ''
+      var year = 0
+      var length = ""
+      function checkValues(){
+        if (genre != '' & year != 0 & length != ''){
+          ExecPythonCommand('algo("' + genre + '",' + year + ',"' + length + '")')
+          // alert('algo("' + genre + '",' + year + ',"' + length + '")')
+        }
+      }
+
+      function checkYear(){
+        year = document.getElementById("year").value;
+      }
+
+      function setValueGenre(value) {
+        // checkYear()
+        genre = value;
+        // checkValues()
+      }
+      function setValueLength(value) {
+        checkYear()
+        length = value
+        checkValues()
+      }
+      document.getElementById("min").onclick = function() {
+        fetch('/end', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({value: ['Netflix.csv', genre, document.getElementById("year").value, 'short']})
+            })
+            .then(response => response.text())
+            .then(html => {
+              document.documentElement.innerHTML = html;
+            })
+        }
+        document.getElementById("mid").onclick = function() {
+          fetch('/end', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({value: ['Netflix.csv', genre, document.getElementById("year").value, 'mid']})
+            })
+            .then(response => response.text())
+            .then(html => {
+              document.documentElement.innerHTML = html;
+            })
+        }
+        document.getElementById("max").onclick = function() {
+            fetch('/end', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({value: ['Netflix.csv', genre, document.getElementById("year").value, 'long']})
+            })
+            .then(response => response.text())
+            .then(html => {
+              document.documentElement.innerHTML = html;
+            })
+        }
+        document.getElementById("random").onclick = function() {
+            fetch('/random', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({value: 'Netflix.csv'})
+            })
+            .then(response => response.text())
+            .then(html => {
+              document.documentElement.innerHTML = html;
+            })
+        }
+    </script>
+  
+</body></html>
